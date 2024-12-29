@@ -2,7 +2,6 @@
   "name": "fanzee-test",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://f1nderas.github.io/vue-movie",
   "type": "module",
   "scripts": {
     "dev": "vite",
