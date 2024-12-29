@@ -73,6 +73,7 @@ const goToMovieDetails = (movieId: number) => {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 .movie-card {
   height: 306px;
   background: #292d32;
