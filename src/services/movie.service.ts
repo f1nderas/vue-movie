@@ -13,8 +13,7 @@ const request = (method: 'get', url: string) =>
 const movieService = {
   getAll: async (): Promise<IMovie[]> =>
     request('get', '/data.json').then((response) => response.items),
-  getById: async (_movieId: number | string): Promise<IMovieWithDetails> =>
-    request('get', '/detail.json'),
+  getById: async (): Promise<IMovieWithDetails> => request('get', '/detail.json'),
 }
 
 export { movieService }

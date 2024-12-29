@@ -1,16 +1,13 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
 import { movieService } from '../services/movie.service'
 import cTag from '../components/Tag.vue'
 import type { IMovieWithDetails } from '@/types/interfaces'
 
-const route = useRoute()
-const movieId = ref(route.params.id)
 const movie = ref<IMovieWithDetails | null>(null)
 
 onMounted(async () => {
-  movie.value = await movieService.getById(movieId)
+  movie.value = await movieService.getById()
 })
 
 const getRatingColor = (rating: number) => {
@@ -53,7 +50,7 @@ const getRatingColor = (rating: number) => {
       </ul>
       <span class="h1">Actors</span>
       <ul class="actor-list">
-        <li v-for="actor in movie.actors" :key="actor" class="actor-item">
+        <li v-for="actor in movie.actors" :key="actor.imdb_id" class="actor-item">
           {{ actor.name }}
         </li>
       </ul>

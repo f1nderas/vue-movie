@@ -5,6 +5,10 @@ import cTag from '../components/Tag.vue'
 import { useRouter } from 'vue-router'
 import type { IMovie } from '@/types/interfaces'
 
+defineOptions({
+  name: 'main-page',
+})
+
 const movies = ref<IMovie[]>([])
 const router = useRouter()
 

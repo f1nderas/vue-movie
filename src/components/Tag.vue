@@ -1,4 +1,7 @@
 <script setup lang="ts">
+defineOptions({
+  name: 'c-tag',
+})
 defineProps<{
   color: string
 }>()
