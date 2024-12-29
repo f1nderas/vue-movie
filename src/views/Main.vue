@@ -3,8 +3,9 @@ import { onMounted, ref } from 'vue'
 import { movieService } from '../services/movie.service'
 import cTag from '../components/Tag.vue'
 import { useRouter } from 'vue-router'
+import type { IMovie } from '@/types/interfaces'
 
-const movies = ref([])
+const movies = ref<IMovie[]>([])
 const router = useRouter()
 
 onMounted(async () => {

@@ -3,10 +3,11 @@ import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { movieService } from '../services/movie.service'
 import cTag from '../components/Tag.vue'
+import type { IMovieWithDetails } from '@/types/interfaces'
 
 const route = useRoute()
 const movieId = ref(route.params.id)
-const movie = ref(null)
+const movie = ref<IMovieWithDetails | null>(null)
 
 onMounted(async () => {
   movie.value = await movieService.getById(movieId)
