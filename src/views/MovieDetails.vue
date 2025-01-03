@@ -3,6 +3,9 @@ import { onMounted, ref } from 'vue'
 import { movieService } from '../services/movie.service'
 import cTag from '../components/Tag.vue'
 import type { IMovieWithDetails } from '@/types/interfaces'
+import iconStart from '@/assets/iconStart.vue'
+import iconMovie from '@/assets/iconMovie.vue'
+import iconClock from '@/assets/iconClock.vue'
 
 const movie = ref<IMovieWithDetails | null>(null)
 
@@ -26,12 +29,21 @@ const getRatingColor = (rating: number) => {
       </div>
       <div class="tag-list">
         <c-tag :color="getRatingColor(movie.rating)">
+          <template #icon>
+            <iconStart />
+          </template>
           {{ movie.rating.toFixed(1) }}
         </c-tag>
         <c-tag color="#2c81fb">
+          <template #icon>
+            <iconMovie />
+          </template>
           {{ movie.genre }}
         </c-tag>
         <c-tag color="#702bfe">
+          <template #icon>
+            <iconClock />
+          </template>
           {{ movie.duration }}
         </c-tag>
       </div>

@@ -9,10 +9,10 @@ defineProps<{
 
 <template>
   <div class="c-tag">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <slot></slot>
+    <slot name="icon"></slot>
+    <div>
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -22,5 +22,9 @@ defineProps<{
   background-color: var(--tag-bg-color);
   padding: 2px 6px;
   border-radius: 8px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 </style>

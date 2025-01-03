@@ -4,6 +4,9 @@ import { movieService } from '../services/movie.service'
 import cTag from '../components/Tag.vue'
 import { useRouter } from 'vue-router'
 import type { IMovie } from '@/types/interfaces'
+import iconStart from '@/assets/iconStart.vue'
+import iconMovie from '@/assets/iconMovie.vue'
+import iconClock from '@/assets/iconClock.vue'
 
 defineOptions({
   name: 'main-page',
@@ -44,12 +47,21 @@ const goToMovieDetails = (movieId: number) => {
       </div>
       <div class="tag-list">
         <c-tag :color="getRatingColor(movie.rating)">
+          <template #icon>
+            <iconStart />
+          </template>
           {{ movie.rating.toFixed(1) }}
         </c-tag>
         <c-tag color="#2c81fb">
+          <template #icon>
+            <iconMovie />
+          </template>
           {{ movie.genre }}
         </c-tag>
         <c-tag color="#702bfe">
+          <template #icon>
+            <iconClock />
+          </template>
           {{ movie.duration }}
         </c-tag>
       </div>
